@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>sight singing</title>
+  <link rel="stylesheet" href="static/main.css">
+  <!-- TODO modules -->
+</head>
+<body>
+  <header>Sight signing exercises</header>
+
+  <section id="score1"></section>
+  <section id="errors"></section>
+
+  <section id="controls">
+    <button id='start_btn' class='button'>Start</button>
+    <!-- <button id='stop_btn' class='button'>Stop</button> -->
+    <!-- <button id='play_btn' class='button'>Play Line</button> -->
+    <button id='prev_btn' class='button'>Previous Exercise</button>
+    <button id='next_btn' class='button'>Next Exercise</button>
+    <div id='message'></div>
+  </section>
+
+  <section id="detector" class="vague">
+    Live
+    <div class="pitch"><span id="pitch">--</span>Hz</div>
+    <div class="note"><span id="note">--</span></div>
+    <!-- <canvas id="output" width=100 height=42></canvas> -->
+    <div id="detune"><span id="detune_amt">--</span><span id="flat">cents &#9837;</span><span id="sharp">cents &#9839;</span></div>
+  </section>
+
+  <section id="latch" class="vague">
+      Latched
+      <div class="pitch"><span id="latchedPitch">--</span>Hz</div>
+      <div class="note"><span id="latchedNote">--</span></div>
+      <!-- <canvas id="output" width=100 height=42></canvas> -->
+      <div id="latchedDetune"><span id="latched_detune_amt">--</span><span id="latched_flat">cents &#9837;</span><span id="latched_sharp">cents &#9839;</span></div>
+  </section>
+
+  <section id="target" class="vague">
+    Target
+    <div class="pitch"><span id="targetPitch">--</span>Hz</div>
+    <div class="note"><span id="targetNote">--</span></div>
+    <!-- <canvas id="output" width=100 height=42></canvas> -->
+    <div id="targetDetune"><span id="target_detune_amt">--</span><span id="target_flat">cents &#9837;</span><span id="target_sharp">cents &#9839;</span></div>
+  </section>
+
+  <!-- just used for debugging -->
+  <canvas id="waveform" width="512" height="256"></canvas>
+
+  <footer>
+    <p>by David H.Friedman at <a href="http://www.fullstackacademy.com/">Fullstack Academy</a></p>
+  </footer>
+</body>
+<script>
+  var latchedNoteName, latchedOctave;
+  var currentNoteName, currentOctave;
+</script>
+<script src="static/vexflow-min.js"></script>
+<script src="static/pitchdetect.js"></script>
+<script src="static/rendermusic.js"></script>
+</html>
